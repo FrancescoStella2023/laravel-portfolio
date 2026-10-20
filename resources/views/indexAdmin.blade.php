@@ -2,7 +2,7 @@
 @section('content')
 
     <div class="border-bottom border-2 m-2 mb-4">
-        <h1 class="text-danger m-2">Zona Admin</h1>
+        <h1 class="text-danger m-2">Zona Admin di {{ $user['email'] }}</h1>
     </div>
 
     <div class="content">
