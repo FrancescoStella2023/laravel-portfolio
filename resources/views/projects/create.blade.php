@@ -11,8 +11,8 @@
             <input class="form-control" type="text" id="name" name="name">
         </div>
         <div class="mb-3">
-            <label class="form-label" for="category">Categoria</label>
-            <input class="form-control" type="text" id="category" name="category">
+            <label class="form-label" for="type">Tipo</label>
+            <input class="form-control" type="text" id="type" name="type">
         </div>
         <div class="mb-3">
             <label class="form-label" for="description">Descrizione</label>

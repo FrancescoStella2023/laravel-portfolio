@@ -16,7 +16,7 @@
     </div>
 
     <div class="container-fluid bg-dark text-white rounded p-4 my-3">
-        <h3 class="fw-b">{{ $project['category'] }}</h3>
+        <h3 class="fw-b">{{ $project['type'] }}</h3>
         <p>{{ $project['description'] }}</p>
     </div>
 

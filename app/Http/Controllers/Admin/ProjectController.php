@@ -32,13 +32,13 @@ class ProjectController extends Controller
     {
         $data = $request->all();
 
-        if (empty($data['name']) || empty($data['category']) || empty($data['description'])) {
+        if (empty($data['name']) || empty($data['type']) || empty($data['description'])) {
             return redirect()->route('projects.index');
         }
 
         $new_project = new Project();
         $new_project->name = $data['name'];
-        $new_project->category = $data['category'];
+        $new_project->type = $data['type'];
         $new_project->description = $data['description'];
 
         $new_project->save();
@@ -69,12 +69,12 @@ class ProjectController extends Controller
     {
         $data = $request->all();
 
-        if (empty($data['name']) || empty($data['category']) || empty($data['description'])) {
+        if (empty($data['name']) || empty($data['type']) || empty($data['description'])) {
             return redirect()->route('projects.index');
         }
 
         $project->name = $data['name'];
-        $project->category = $data['category'];
+        $project->type = $data['type'];
         $project->description = $data['description'];
 
         $project->save();

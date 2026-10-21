@@ -4,12 +4,12 @@
 
 @section("content")
 
-    <div class="container-fluid d-flex justify-content-center">
+    <div class="container-fluid d-flex justify-content-center my-5">
         <a href="{{ route("projects.create") }}" class="btn btn-outline-success display-on-line">Aggiungi progetto</a>
     </div>
 
 
-    <table class="table table-hover align-middle my-4">
+    <table class="table table-hover align-middle my-5">
         <thead class="table-dark border-bottom">
             <tr>
                 <th class="py-3">Titolo</th>
@@ -25,7 +25,7 @@
                 <tr>
                     <td class="py-3">{{ $project->name }}</td>
                     <td class="py-3">{{ $project->description }}</td>
-                    <td class="py-3">{{ $project->category }}</td>
+                    <td class="py-3">{{ $project->type }}</td>
                     <td class="py-3">
                         <a href="{{ route('projects.show', $project->id) }}" class="btn btn-outline-primary display-on-line">
                             Dettagli

@@ -20,7 +20,7 @@ class ProjectsTableSeeder extends Seeder
 
             $new_project->name = $faker->sentence();
             $new_project->description = $faker->paragraph(3);
-            $new_project->category = $faker->word();
+            $new_project->type_id = rand(1, 3);
 
             $new_project->save();
         }
