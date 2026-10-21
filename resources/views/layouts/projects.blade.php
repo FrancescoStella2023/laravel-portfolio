@@ -10,9 +10,16 @@
 
 <body>
     <div class="conainer">
-        <h1>@yield("title")</h1>
-        @yield("content")
+        <header class="class d-flex justify-content-center bg-dark text-white mb-2 p-2">
+            <h1>@yield("title")</h1>
+        </header>
+        <div class="conainer  m-4">
+            @yield("content")
+        </div>
     </div>
+    <footer class="class d-flex justify-content-center bg-dark text-white pt-2">
+        <p>2026 - Portoflio project</p>
+    </footer>
 </body>
 
 </html>

@@ -30,7 +30,20 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        return "sei nello store";
+        $data = $request->all();
+
+        if (empty($data['name']) || empty($data['category']) || empty($data['description'])) {
+            return redirect()->route('projects.index');
+        }
+
+        $new_project = new Project();
+        $new_project->name = $data['name'];
+        $new_project->category = $data['category'];
+        $new_project->description = $data['description'];
+
+        $new_project->save();
+
+        return redirect()->route('projects.show', $new_project);
     }
 
     /**
@@ -38,30 +51,44 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-        return view("projects.show", compact("project"));
+        return view("projects.show", compact('project'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Project $project)
     {
-        //
+        return view("projects.edit", compact('project'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Project $project)
     {
-        //
+        $data = $request->all();
+
+        if (empty($data['name']) || empty($data['category']) || empty($data['description'])) {
+            return redirect()->route('projects.index');
+        }
+
+        $project->name = $data['name'];
+        $project->category = $data['category'];
+        $project->description = $data['description'];
+
+        $project->save();
+
+        return redirect()->route('projects.show', $project);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Project $project)
     {
-        //
+        $project->delete();
+
+        return redirect()->route('projects.index');
     }
 }

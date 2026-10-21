@@ -1,6 +1,6 @@
 @extends("layouts.projects")
 
-@section("title", "Aggiungi un unuovo progetto")
+@section("title", "Aggiungi un un nuovo progetto")
 
 @section("content")
     <form action="{{ route("projects.store") }}" method="POST" class="m-2">
@@ -19,6 +19,11 @@
             <textarea class="form-control" id="description" name="description" rows="4"></textarea>
         </div>
 
-        <input class="btn btn-primary mt-2" type="submit" value="Salva">
+        <div class="container m-2">
+            <input class="btn btn-primary" type="submit" value="Salva">
+            <a href="{{ route('projects.index') }}" class="btn btn-danger display-on-line">
+                Annulla
+            </a>
+        </div>
     </form>
 @endsection
