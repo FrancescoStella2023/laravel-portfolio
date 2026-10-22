@@ -14,8 +14,22 @@
         </button>
     </div>
 
-    <div class="container-fluid bg-dark text-white rounded p-4 my-3">
-        <h3 class="fw-b">{{ $project->type->name }}</h3>
+    <div class="d-flex flex-column bg-dark text-white rounded p-4 my-3">
+        <h4 class="fw-b">{{ $project->name }}</h4>
+
+        <div class="d-flex flex-column my-2">
+            <small>
+                Tipologia: <strong>{{ $project->type->name }}</strong>
+            </small>
+            <small>
+                Tecnologie:
+                @forelse ($project->technologies as $technology)
+                    <span class="badge" style="background-color: {{ $technology->color }}">{{ $technology->name }}</span>
+                @empty
+                    <span class="badge bg-primary">Nessuna</span>
+                @endforelse
+            </small>
+        </div>
         <p>{{ $project->description }}</p>
     </div>
 

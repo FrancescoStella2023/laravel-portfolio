@@ -1,6 +1,6 @@
 @extends("layouts.projects")
 
-@section("title", "Tutti i post")
+@section("title", "Tutti i progetti")
 
 @section("content")
 
