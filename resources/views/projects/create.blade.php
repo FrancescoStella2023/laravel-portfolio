@@ -12,7 +12,11 @@
         </div>
         <div class="mb-3">
             <label class="form-label" for="type">Tipo</label>
-            <input class="form-control" type="text" id="type" name="type">
+            <select name="type_id" id="type_id">
+                @foreach ($types as $type)
+                    <option value="{{ $type->id }}">{{ $type->name }}</option>
+                @endforeach
+            </select>
         </div>
         <div class="mb-3">
             <label class="form-label" for="description">Descrizione</label>

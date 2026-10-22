@@ -1,6 +1,6 @@
 @extends("layouts.projects")
 
-@section("title", $project['name'])
+@section("title", $project->name)
 
 @section("content")
 
@@ -12,12 +12,11 @@
         <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
             Elimina Progetto
         </button>
-
     </div>
 
     <div class="container-fluid bg-dark text-white rounded p-4 my-3">
-        <h3 class="fw-b">{{ $project['type'] }}</h3>
-        <p>{{ $project['description'] }}</p>
+        <h3 class="fw-b">{{ $project->type->name }}</h3>
+        <p>{{ $project->description }}</p>
     </div>
 
 

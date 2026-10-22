@@ -13,7 +13,11 @@
         </div>
         <div class="mb-3">
             <label class="form-label" for="category">Categoria</label>
-            <input class="form-control" type="text" id="category" name="category" value="{{ $project->category }}">
+            <select name="type_id" id="type_id">
+                @foreach ($types as $type)
+                    <option value="{{ $type->id }}" @selected($project->type_id == $type->id)>{{ $type->name }}</option>
+                @endforeach
+            </select>
         </div>
         <div class="mb-3">
             <label class="form-label" for="description">Descrizione</label>
